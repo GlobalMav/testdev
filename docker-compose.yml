@@ -2,5 +2,17 @@ version: '3'
 services:
   redis:
     image: redis
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
     ports:
       - "6379:6379"
+  server:
+    build: .
+    restart: on-failure
+    links:
+      - redis
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    ports:
+      - "8000:8000"
+    command: python app/app.py

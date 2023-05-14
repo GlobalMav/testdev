@@ -23,3 +23,4 @@ def create_app() -> web.Application:
 if __name__ == "__main__":
     app = create_app()
     web.run_app(app, port=8000)
+
