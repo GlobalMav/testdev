@@ -1,2 +1,4 @@
 aiohttp
 aioredis
+aiohttp_session
+dependency_injecto
